@@ -1,5 +1,5 @@
 {
-  "name": "elasticquent/elasticquent",
+  "name": "getasnap/elasticquent",
   "type": "library",
   "description": "Maps Laravel Eloquent models to Elasticsearch types.",
   "keywords": [
