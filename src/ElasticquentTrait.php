@@ -586,13 +586,13 @@ trait ElasticquentTrait
     public function newFromHitBuilder($hit = array())
     {
         $key_name = $this->getKeyName();
-        
+
         $attributes = $hit['_source'];
 
         if (isset($hit['_id'])) {
             $attributes[$key_name] = is_numeric($hit['_id']) ? intval($hit['_id']) : $hit['_id'];
         }
-        
+
         // Add fields to attributes
         if (isset($hit['fields'])) {
             foreach ($hit['fields'] as $key => $value) {
@@ -685,7 +685,7 @@ trait ElasticquentTrait
         $items = array_map(function ($item) use ($instance, $parentRelation) {
             // Convert all null relations into empty arrays
             $item = $item ?: [];
-            
+
             return static::newFromBuilderRecursive($instance, $item, $parentRelation);
         }, $items);
 
@@ -706,7 +706,7 @@ trait ElasticquentTrait
                 $reflection_method = new ReflectionMethod($model, $key);
 
                 // Check if method class has or inherits Illuminate\Database\Eloquent\Model
-                if(!static::isClassInClass("Illuminate\Database\Eloquent\Model", $reflection_method->class)) {
+                if (!static::isClassInClass("Illuminate\Database\Eloquent\Model", $reflection_method->class)) {
                     $relation = $model->$key();
 
                     if ($relation instanceof Relation) {
@@ -786,7 +786,7 @@ trait ElasticquentTrait
     private static function isClassInClass($classNeedle, $classHaystack)
     {
         // Check for the same
-        if($classNeedle == $classHaystack) {
+        if ($classNeedle == $classHaystack) {
             return true;
         }
 
@@ -796,14 +796,12 @@ trait ElasticquentTrait
             /**
              * @var \ReflectionClass $parent
              */
-            if($parent->getName() == $classNeedle) {
+            if ($parent->getName() == $classNeedle) {
                 return true;
             }
             $classHaystackReflected = $parent;
         }
 
         return false;
-
     }
-
 }

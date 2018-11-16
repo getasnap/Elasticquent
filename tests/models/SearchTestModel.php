@@ -35,6 +35,6 @@ class SearchTestModel extends Eloquent implements ElasticquentInterface
             ->with(complexParameters())
             ->andReturn(successfulResults());
 
-        return $elasticClient; 
+        return $elasticClient;
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
-class ElasticquentTraitTest extends PHPUnit_Framework_TestCase {
-
+class ElasticquentTraitTest extends PHPUnit_Framework_TestCase
+{
     public $modelData = array('name' => 'Test Name');
 
     /**
@@ -24,7 +24,7 @@ class ElasticquentTraitTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Test type name overrides table name 
+     * Test type name overrides table name
      */
     public function testTypeNameOverridesTableName()
     {
@@ -68,7 +68,9 @@ class ElasticquentTraitTest extends PHPUnit_Framework_TestCase {
         $custom->fill($this->modelData);
 
         $this->assertEquals(
-                array('foo' => 'bar'), $custom->getIndexDocumentData());
+                array('foo' => 'bar'),
+            $custom->getIndexDocumentData()
+        );
     }
 
     /**
@@ -79,5 +81,4 @@ class ElasticquentTraitTest extends PHPUnit_Framework_TestCase {
         $this->assertFalse($this->model->isDocument());
         $this->assertNull($this->model->documentScore());
     }
-
 }

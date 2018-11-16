@@ -12,9 +12,9 @@
  * specifically returns results consistent with the ElasticSearch PHP client version
  * 2.0 documentation.
  *
- * The Elasticquent method will then format the response and we test that the resulting 
- * Elasticquent results collection methods return the results we expect to verify this. 
- */ 
+ * The Elasticquent method will then format the response and we test that the resulting
+ * Elasticquent results collection methods return the results we expect to verify this.
+ */
 
 class ElasticSearchMethodsTest extends PHPUnit_Framework_TestCase
 {

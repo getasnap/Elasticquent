@@ -76,5 +76,4 @@ trait ElasticquentCollectionTrait
         $this->deleteFromIndex();
         return $this->addToIndex();
     }
-
 }

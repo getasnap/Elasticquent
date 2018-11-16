@@ -23,5 +23,4 @@ trait ElasticquentClientTrait
         // elasticsearch v1
         return new \Elasticsearch\Client($config);
     }
-
 }
