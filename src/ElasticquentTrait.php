@@ -280,7 +280,7 @@ trait ElasticquentTrait
 
         $params = $instance->getBasicEsParams();
 
-        $params['body']['query']['match']['_all'] = $term;
+        $params['body']['query']['query_string']['query'] = $term;
 
         $result = $instance->getElasticSearchClient()->search($params);
 
