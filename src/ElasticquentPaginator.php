@@ -20,9 +20,9 @@ class ElasticquentPaginator extends Paginator
         foreach ($options as $key => $value) {
             $this->{$key} = $value;
         }
-        $this->total = $total;
+        $this->total = (int) $total;
         $this->perPage = $perPage;
-        $this->lastPage = $total > 0 ? (ceil($total / $perPage)) : 1;
+        $this->lastPage = $this->total > 0 ? (ceil($this->total / $perPage)) : 1;
         $this->currentPage = $this->setCurrentPage($currentPage, $this->lastPage);
         $this->path = $this->path != '/' ? rtrim($this->path, '/') . '/' : $this->path;
         $this->items = $items instanceof Collection ? $items : Collection::make($items);
